@@ -1,3 +1,3 @@
 ﻿# Airport-board
 
-[link](https://friendly-feynman-d31a8e.netlify.app)
+[link](https://frolicking-melomakarona-7e6fd2.netlify.app/)
