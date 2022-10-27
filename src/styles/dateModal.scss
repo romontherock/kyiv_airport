@@ -1,0 +1,56 @@
+.calendar {
+  padding-bottom: 10px;
+  display: flex;
+  background-color: #fff;
+
+  &-date {
+    font-size: 20px;
+    margin: 5px 10px;
+
+    &__num {
+      margin-left: 70px;
+      font-size: 10px;
+      color: #1eb7ee;
+    }
+
+    &__form {
+      background-color: #1eb7ee;
+      color: #fff;
+      border: none;
+    }
+  }
+
+  &-day {
+    margin: 5px 20px;
+    color: #a9a9a9;
+    background-color: #fff;
+    border: none;
+
+    &__num {
+      margin-left: 10px;
+      font-size: 10px;
+    }
+
+    &__title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-top: 3px;
+      text-decoration: underline;
+    }
+  }
+
+  &__yesterday:hover {
+    color: #1eb7ee;
+    cursor: pointer;
+  }
+
+  &__today:hover {
+    color: #1eb7ee;
+    cursor: pointer;
+  }
+
+  &__tomorrow:hover {
+    color: #1eb7ee;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,74 @@
+.flight-info {
+  display: flex;
+  background-color: #fff;
+
+  &:nth-child(odd) {
+    background-color: rgba(0, 102, 135, 0.1);
+  }
+
+  &:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
+
+  &__terminal {
+    display: flex;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    padding: 32px 70px;
+    // color: #63c745;
+    // font-weight: 700;
+    // border: 1px solid #63c745;
+    // border-radius: 50%;
+    // display: inline-block;
+    // width: 40px;
+    // height: 40px;
+    // text-align: center;
+    // line-height: 35px;
+    // font-size: 22px;
+    border-radius: 50%;
+  }
+  &__schedule {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    padding: 14px 65px;
+  }
+
+  &__city {
+    display: flex;
+    align-items: center;
+    width: 150px;
+    padding: 14px 90px;
+  }
+  &__status {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    padding: 14px 80px;
+  }
+
+  &__flight {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    padding: 14px 40px;
+  }
+
+  &__airline {
+    display: flex;
+    align-items: center;
+    padding: 14px 15px;
+
+    &-name {
+      margin: 10px;
+      width: 100px;
+      height: 20px;
+    }
+
+    &-logo {
+      width: 63px;
+      height: 38px;
+    }
+  }
+}
