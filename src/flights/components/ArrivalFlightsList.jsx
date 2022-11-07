@@ -14,7 +14,7 @@ const ArrivalFlightsList = ({ flightsList, getFlightsList }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const search = searchParams.get('search');
   const date = searchParams.get('date');
-  console.log(search);
+  // console.log(search);
   useEffect(() => {
     if (!date) {
       console.log(search);

@@ -3,12 +3,17 @@ import '../../styles/navigation.scss';
 import { NavLink } from 'react-router-dom';
 
 const Navigation = () => {
+  let activeStyle = {
+    paddingRight: '40px',
+    color: '#fff',
+    backgroundColor: '#1eb7ee',
+  };
   return (
     <div className="navigation">
       <NavLink
+        style={({ isActive }) => (isActive ? activeStyle : undefined)}
         className="navigation__btn navigation-departure__btn"
         to={`/departure${location.search}`}
-        activeClassName="navigation__btn_selected"
       >
         <span className="navigation__btn-icon">
           <i className="fas fa-plane-departure"></i>
@@ -19,8 +24,7 @@ const Navigation = () => {
       <NavLink
         className="navigation__btn navigation-arrival__btn"
         to={`/arrival${location.search}`}
-        activeClassName="navigation__btn_selected"
-        // className={isActive => 'navigation__btn' + (isActive ? '_selected' : '')}
+        style={({ isActive }) => (isActive ? activeStyle : undefined)}
       >
         <span className="navigation__btn-icon">
           <i className="fas fa-plane-arrival"></i>
