@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import moment from 'moment';
+import PropTypes from 'prop-types';
 import DepartureFlight from './DepartureFlight';
 import '../../styles/entitieList.scss';
 import { flightsListSelector } from '../flights.selectors';
@@ -16,7 +17,6 @@ const DepartureFlightsList = ({ flightsList, getFlightsList }) => {
 
   useEffect(() => {
     if (!date) {
-      console.log(date);
       setSearchParams({ ...searchParams, date: currentDate });
       return;
     }
@@ -32,6 +32,11 @@ const DepartureFlightsList = ({ flightsList, getFlightsList }) => {
   ) : (
     flights.map(flightInfo => <DepartureFlight key={flightInfo.ID} flightInfo={flightInfo} />)
   );
+};
+
+DepartureFlightsList.propTypes = {
+  flightsList: PropTypes.object.isRequired,
+  getFlightsList: PropTypes.func.isRequired,
 };
 
 const mapState = state => ({

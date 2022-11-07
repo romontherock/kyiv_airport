@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../../styles/FlightsList.scss';
 import { setNewTimeFormat } from '../../utils/dateUtils';
 
@@ -30,5 +31,16 @@ const ArrivalFlight = ({ flightInfo }) => {
     </div>
   );
 };
+
+// ArrivalFlight.propTypes = {
+//   flightInfo: PropTypes.objectOf(
+//     PropTypes.shape({
+//       term: PropTypes.string,
+//       timeArrShedule: PropTypes.string,
+//       timeArrExpectCalc: PropTypes.string,
+//       airline: PropTypes.object,
+//     }),
+//   ).isRequired,
+// };
 
 export default ArrivalFlight;

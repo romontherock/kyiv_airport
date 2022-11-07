@@ -8,12 +8,13 @@ const SearchFlightForm = () => {
   const handleChange = e => setSearchInputValue(e.target.value);
 
   const [searchParams, setSearchParams] = useSearchParams();
-  console.log(searchParams.get('date'));
+
   return (
     <form
       className="search-flights"
-      onClick={e => {
+      onSubmit={e => {
         e.preventDefault();
+        console.log(searchInputValue);
         setSearchParams({ ...searchParams, search: searchInputValue });
       }}
     >

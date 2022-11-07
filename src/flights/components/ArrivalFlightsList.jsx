@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import moment from 'moment';
+import PropTypes from 'prop-types';
 import ArrivalFlight from './ArrivalFlight';
 import '../../styles/entitieList.scss';
 import { flightsListSelector } from '../flights.selectors';
@@ -13,14 +14,14 @@ const ArrivalFlightsList = ({ flightsList, getFlightsList }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const search = searchParams.get('search');
   const date = searchParams.get('date');
-
+  console.log(search);
   useEffect(() => {
     if (!date) {
-      console.log(date);
+      console.log(search);
       setSearchParams({ ...searchParams, date: currentDate });
       return;
     }
-    getFlightsList(date);
+    // getFlightsList(date);
   }, [date]);
 
   const flights = search
@@ -34,6 +35,11 @@ const ArrivalFlightsList = ({ flightsList, getFlightsList }) => {
   );
 };
 
+ArrivalFlightsList.propTypes = {
+  flightsList: PropTypes.object.isRequired,
+  getFlightsList: PropTypes.func.isRequired,
+};
+
 const mapState = state => ({
   flightsList: flightsListSelector(state),
 });
@@ -43,36 +49,3 @@ const mapDispatch = {
 };
 
 export default connect(mapState, mapDispatch)(ArrivalFlightsList);
-
-// import React, { useState, useEffect } from 'react';
-// import ArrivalFlight from './ArrivalFlight';
-// import '../../styles/entitieList.scss';
-
-// const ArrivalFlightsList = () => {
-//   const [state, setState] = useState({ flightsList: [] });
-//   const { flightsList } = state;
-//   const params = new URLSearchParams(location.search);
-//   const search = params.get('search');
-//   const date = params.get('date');
-//   const baseUrl = `https://api.iev.aero/api/flights/${date ? date : getNewDateFormat()}`;
-
-//   useEffect(() => {
-//     fetch(baseUrl)
-//       .then(response => response.json())
-//       .then(response => {
-//         setState({ flightsList: response.body.arrival });
-//       });
-//   }, [date]);
-
-//   const flights = search
-//     ? flightsList.filter(flight => flight.codeShareData[0].codeShare.includes(search))
-//     : flightsList;
-
-//   return flights.length === 0 ? (
-//     <div className="default_no-flights">No flights</div>
-//   ) : (
-//     flights.map(flightInfo => <ArrivalFlight key={flightInfo.ID} flightInfo={flightInfo} />)
-//   );
-// };
-
-// export default ArrivalFlightsList;
