@@ -14,8 +14,9 @@ const SearchFlightForm = () => {
       className="search-flights"
       onSubmit={e => {
         e.preventDefault();
-        console.log(searchInputValue);
-        setSearchParams({ ...searchParams, search: searchInputValue });
+        searchParams.set('search', searchInputValue);
+        setSearchParams(searchParams);
+        // setSearchParams({ ...searchParams, search: searchInputValue });
       }}
     >
       <h2 className="search-flights__title">FLIGHT SEARCH</h2>

@@ -12,17 +12,17 @@ const ArrivalFlightsList = ({ flightsList, getFlightsList }) => {
   const currentDate = moment(new Date()).format('DD-MM-YYYY');
 
   const [searchParams, setSearchParams] = useSearchParams();
-  const search = searchParams.get('search');
   const date = searchParams.get('date');
-  // console.log(search);
+
   useEffect(() => {
     if (!date) {
-      console.log(search);
       setSearchParams({ ...searchParams, date: currentDate });
       return;
     }
-    // getFlightsList(date);
+    getFlightsList(date);
   }, [date]);
+
+  const search = searchParams.get('search');
 
   const flights = search
     ? flightsList.arrival.filter(flight => flight.codeShareData[0].codeShare.includes(search))

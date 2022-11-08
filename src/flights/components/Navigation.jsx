@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 
 const Navigation = () => {
   let activeStyle = {
-    paddingRight: '40px',
     color: '#fff',
     backgroundColor: '#1eb7ee',
   };
