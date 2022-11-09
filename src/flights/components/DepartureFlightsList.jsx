@@ -17,7 +17,8 @@ const DepartureFlightsList = ({ flightsList, getFlightsList }) => {
 
   useEffect(() => {
     if (!date) {
-      setSearchParams({ ...searchParams, date: currentDate });
+      searchParams.set('date', date || currentDate);
+      setSearchParams(searchParams);
       return;
     }
     getFlightsList(date);
