@@ -1,8 +1,10 @@
 import React from 'react';
 import '../../styles/navigation.scss';
-import { NavLink } from 'react-router-dom';
+import { useSearchParams, NavLink } from 'react-router-dom';
 
 const Navigation = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+
   let activeStyle = {
     color: '#fff',
     backgroundColor: '#1eb7ee',
