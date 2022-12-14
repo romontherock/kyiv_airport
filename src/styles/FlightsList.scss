@@ -1,6 +1,13 @@
+@import './breakpoints.scss';
+@import './variables.scss';
+
 .flight-info {
   display: flex;
-  background-color: #fff;
+  background-color: $white-color;
+
+  @include for-small-up {
+    width: fit-content;
+  }
 
   &:nth-child(odd) {
     background-color: rgba(0, 102, 135, 0.1);
@@ -16,16 +23,6 @@
     width: 30px;
     height: 30px;
     padding: 32px 70px;
-    // color: #63c745;
-    // font-weight: 700;
-    // border: 1px solid #63c745;
-    // border-radius: 50%;
-    // display: inline-block;
-    // width: 40px;
-    // height: 40px;
-    // text-align: center;
-    // line-height: 35px;
-    // font-size: 22px;
     border-radius: 50%;
   }
   &__schedule {

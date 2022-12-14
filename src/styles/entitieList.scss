@@ -1,7 +1,12 @@
+@import './breakpoints.scss';
+
 .entities {
   display: flex;
   font-size: smaller;
   background-color: #fff;
+  @include for-small-up {
+    width: 100vw;
+  }
 
   &__title_first {
     margin: 20px 50px;

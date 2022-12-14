@@ -1,7 +1,12 @@
+@import './breakpoints.scss';
+
 .calendar {
   padding-bottom: 10px;
   display: flex;
   background-color: #fff;
+  @include for-small-up {
+    width: 100vw;
+  }
 
   &-date {
     font-size: 20px;
